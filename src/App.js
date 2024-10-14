@@ -1,39 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import taxiImage from './assets/taxi.png';  // Asegúrate de poner la ruta correcta
 import './App.css';
+import taxiImage from './assets/taxi.png';  // Asegúrate de poner la ruta correcta
 
 const CarGame = () => {
   const [position, setPosition] = useState(0);  // Posición del carrito
-  const [isMoving, setIsMoving] = useState(false);  // Estado del movimiento
-
-  // Función que mueve el carrito
-  const handleTap = () => {
-    setIsMoving(true);
-    setPosition((prev) => prev + 10);  // Aumenta la posición
-  };
+  const [shakeThreshold, setShakeThreshold] = useState(15);  // Umbral para detectar la sacudida
 
   // Detiene el movimiento después de un tiempo
   useEffect(() => {
-    if (isMoving) {
-      const timer = setTimeout(() => {
-        setIsMoving(false);
-      }, 500);  // Detiene el movimiento después de 500ms
-      return () => clearTimeout(timer);
-    }
-  }, [isMoving]);
-
-  useEffectII(() => {
-   
-    if (typeof DeviceMotionEvent.requestPermission === 'function') {
-      DeviceMotionEvent.requestPermission().then(permissionState => {
-        if (permissionState === 'granted') {
-          window.addEventListener('devicemotion', handleShake);
-        }
-      }).catch(console.error);
-    } else {
-      window.addEventListener('devicemotion', handleShake);
-    }
-
     const handleShake = (event) => {
       const acceleration = event.accelerationIncludingGravity;
       const totalAcceleration = Math.sqrt(
@@ -41,10 +15,12 @@ const CarGame = () => {
         acceleration.y * acceleration.y + 
         acceleration.z * acceleration.z
       );
+
       if (totalAcceleration > shakeThreshold) {
         setPosition((prev) => prev + 20);  // Mueve el carrito al detectar sacudida
       }
     };
+
     // Agregar el evento de devicemotion cuando el componente se monte
     window.addEventListener('devicemotion', handleShake);
 
@@ -59,7 +35,7 @@ const CarGame = () => {
   };
 
   return (
-    <div className="game-container" onClick={handleTap}>
+    <div className="game-container">
       <p className="instructions">Toca la pantalla para mover el taxi.</p>
       <button onClick={handleRestart} className="restart-button">Restart</button>
       <div className="track">
