@@ -21,3 +21,37 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# Archivos de configuración de entorno
+.env
+
+# Directorios de salida de npm
+/dist
+/out
+.cache
+/.next
+
+# Archivos temporales o lockfiles
+*.lock
+
+# IDEs/Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Archivos de servicio o perfiles de publicación
+*.publish
+*.swp
+*.tmp
+
+# Carpetas que crea GitHub Actions
+.github/
+
+# Archivos de entorno de Docker
+.dockerignore
+Dockerfile
+docker-compose.yml

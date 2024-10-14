@@ -36,3 +36,78 @@
     transform: rotate(360deg);
   }
 }
+
+.game-container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('./assets/city-bg.jpg'); /* Fondo de la ciudad */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end;  /* Alinea la pista al fondo */
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.track {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar efecto de elevación */
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+.track:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 5px;  /* Grosor de la línea amarilla */
+  bottom: 10px;  /* Coloca la línea 10px desde la parte inferior */
+  left: 0;
+  background-color: yellow; /* Línea amarilla */
+  z-index: 1;
+}
+.car {
+  position: absolute;
+  top: 0px;  /* Ajusta la posición vertical si es necesario */
+  width: 500px;  /* Ajusta el tamaño según la imagen */
+  height: auto;
+  transition: left 0.5s;
+  z-index: 2; /* Para que esté por encima de la línea de la calle */
+}
+
+.restart-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffcc00;
+  color: #444;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.restart-button:hover {
+  background-color: #ff9900;
+}
+
+@keyframes moveCity {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1000px 0;
+  }
+}
+
+.game-container {
+  
+}
