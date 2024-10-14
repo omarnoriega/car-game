@@ -68,30 +68,42 @@
   height: 5px;  /* Grosor de la línea amarilla */
   bottom: 10px;  /* Coloca la línea 10px desde la parte inferior */
   left: 0;
-  background-color: yellow; /* Línea amarilla */
+  background-color: black; /* Línea amarilla */
   z-index: 1;
 }
 .car {
   position: absolute;
-  top: 0px;  /* Ajusta la posición vertical si es necesario */
-  width: 500px;  /* Ajusta el tamaño según la imagen */
+  top: 30px;  /* Ajusta la posición vertical si es necesario */
+  width: 200vw;  /* Ajusta el tamaño según la imagen */
+  max-width: 300px;
   height: auto;
-  transition: left 0.5s;
+  transition: left 1s;
   z-index: 2; /* Para que esté por encima de la línea de la calle */
 }
 
-.restart-button {
+.instructions {
   position: absolute;
-  bottom: 20px;
+  top: 10px;  /* Ubicado en la parte superior */
   left: 50%;
   transform: translateX(-50%);
+  color: white;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+.restart-button {
+  position: absolute;
+  top: 40px;
+  left: 10px;
   background-color: #ffcc00;
   color: #444;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 2vw; /* Tamaño de fuente responsivo para el botón */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 

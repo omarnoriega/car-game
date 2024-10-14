@@ -28,6 +28,8 @@ const CarGame = () => {
 
   return (
     <div className="game-container" onClick={handleTap}>
+      <p className="instructions">Toca la pantalla para mover el taxi.</p>
+      <button onClick={handleRestart} className="restart-button">Restart</button>
       <div className="track">
       <img 
           src={taxiImage} 
@@ -36,36 +38,9 @@ const CarGame = () => {
           style={{ left: `${position}px` }} 
         />      
       </div>
-      <button onClick={handleRestart} className="restart-button">
-        Restart
-      </button>
-      <p>Toca la pantalla para mover el carrito.</p>
+      
     </div>
   );
 };
 
 export default CarGame;
-/*
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
-*/
