@@ -1,6 +1,8 @@
 # Car Game - Kyndryl Demo
 
 This project was created for devops workshop demonstration 
+    
+    author omar.noriega
 
 ## Available Scripts
 
