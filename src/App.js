@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import React, { useState, useEffect } from 'react';
 import taxiImage from './assets/taxi.png';  // Asegúrate de poner la ruta correcta
 import './App.css';
