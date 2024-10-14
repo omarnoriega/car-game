@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Car Game - Kyndryl Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created for devops workshop demonstration 
 
 ## Available Scripts
 
